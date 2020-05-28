@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require('../../../lib/rules/max-destructure-depth.js'),
+var rule = require('../../../lib/rules/max-depth.js'),
   RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 6 } });
