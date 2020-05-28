@@ -36,16 +36,34 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
+    "destructure-depth/max-depth": ["warn"]
+  }
+}
+```
+
+To customize the allowed destructuring depth:
+
+```json
+{
+  "rules": {
     "destructure-depth/max-depth": [
       "warn",
       {
         "object": {
-          "max": 0 // no deep destructuring allowed.
+          "max": 1
         }
       }
     ]
   }
 }
+```
+
+This will allow up to 1 level deep of destructuring:
+
+```js
+const {
+  a: { b },
+} = object;
 ```
 
 ## License
