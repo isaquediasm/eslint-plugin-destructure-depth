@@ -31,14 +31,20 @@ Add `destructure-depth` to the plugins section of your .eslintrc configuration f
 }
 ```
 
-```json
 Then configure the rules you want to use under the rules section.
+
+```json
 {
-    "rules": {
-        "destructure-depth/max-depth": ["warn", { "object": {
-            "max": 0 // no deep destructuring allowed.
-        }}]
-    }
+  "rules": {
+    "destructure-depth/max-depth": [
+      "warn",
+      {
+        "object": {
+          "max": 0 // no deep destructuring allowed.
+        }
+      }
+    ]
+  }
 }
 ```
 
