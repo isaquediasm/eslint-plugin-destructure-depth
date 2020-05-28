@@ -12,3 +12,36 @@ This rule enforces the usage of single-level destructuring over deep destructuri
     const f = object.?b.?d.?e;
     ```
 ````
+
+## Installation
+
+Use Yarn or NPM to install the package.
+
+```
+yarn install eslint-plugin-destructure-depth --dev
+```
+
+## Usage
+
+Add `destructure-depth` to the plugins section of your .eslintrc configuration file. You can omit the eslint-plugin- prefix:
+
+```json
+{
+  "plugins": ["destructure-depth"]
+}
+```
+
+```json
+Then configure the rules you want to use under the rules section.
+{
+    "rules": {
+        "destructure-depth/max-depth": ["warn", { "object": {
+            "max": 0 // no deep destructuring allowed.
+        }}]
+    }
+}
+```
+
+## License
+
+[MIT License](https://github.com/isaquediasm/redux-tracking-middleware/master/LICENSE.md) © [Isaque Dias](https://github.com/isaquediasm)
