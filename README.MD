@@ -18,7 +18,7 @@ This rule enforces the usage of single-level destructuring over deep destructuri
 Use Yarn or NPM to install the package.
 
 ```
-yarn install eslint-plugin-destructure-depth --dev
+yarn add eslint-plugin-destructure-depth --dev
 ```
 
 ## Usage
