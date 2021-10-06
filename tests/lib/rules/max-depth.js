@@ -11,7 +11,7 @@
 var rule = require('../../../lib/rules/max-depth.js'),
   RuleTester = require('eslint').RuleTester;
 
-const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 9 } });
+const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 6 } });
 
 ruleTester.run('prefer-destructuring', rule, {
   valid: [
@@ -26,6 +26,7 @@ ruleTester.run('prefer-destructuring', rule, {
     {
       code: 'const { ...rest } = object.foo;',
       options: [{ object: true }],
+      parserOptions: { ecmaVersion: 9 },
     },
   ],
 
