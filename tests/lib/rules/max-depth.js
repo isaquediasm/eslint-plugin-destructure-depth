@@ -37,9 +37,8 @@ ruleTester.run('prefer-destructuring', rule, {
         },
       ],
     },
-
     {
-      code: 'var {bar: { a: { b } }} = object.foo;',
+      code: 'var {foo, bar: { a: { b } }} = object.foo;',
       output: null,
       errors: [
         {
