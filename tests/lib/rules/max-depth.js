@@ -1,6 +1,6 @@
 /**
- * @fileoverview Prefer destructuring from arrays and objects
- * @author Alex LaFroscia
+ * @fileoverview A rule to set the maximum depth objects can be destructured
+ * @author Isaque Dias
  */
 'use strict';
 

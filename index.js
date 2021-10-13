@@ -1,6 +1,6 @@
 /**
- * @fileoverview Prefer destructuring from arrays and objects
- * @author Alex LaFroscia
+ * @fileoverview A rule to set the maximum depth objects can be destructured
+ * @author Isaque Dias
  */
 'use strict';
 
@@ -14,10 +14,10 @@ module.exports = {
       type: 'suggestion',
 
       docs: {
-        description: 'require destructuring from arrays and/or objects',
+        description: 'Limit destructuring depth of objects',
         category: 'ECMAScript 6',
         recommended: false,
-        url: 'https://eslint.org/docs/rules/prefer-destructuring',
+        url: 'https://github.com/isaquediasm/eslint-plugin-destructure-depth',
       },
 
       fixable: 'code',
