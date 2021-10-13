@@ -23,6 +23,11 @@ ruleTester.run('prefer-destructuring', rule, {
       code: 'var { bar } = object.foo;',
       options: [{ object: true }],
     },
+    {
+      code: 'const { ...rest } = object.foo;',
+      options: [{ object: true }],
+      parserOptions: { ecmaVersion: 9 },
+    },
   ],
 
   invalid: [
@@ -37,9 +42,8 @@ ruleTester.run('prefer-destructuring', rule, {
         },
       ],
     },
-
     {
-      code: 'var {bar: { a: { b } }} = object.foo;',
+      code: 'var {foo, bar: { a: { b } }} = object.foo;',
       output: null,
       errors: [
         {
