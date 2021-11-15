@@ -28,6 +28,16 @@ ruleTester.run('prefer-destructuring', rule, {
       options: [{ object: true }],
       parserOptions: { ecmaVersion: 9 },
     },
+    {
+      code: 'const { bar = {} } = {}',
+      options: [{ object: true }],
+      parserOptions: { ecmaVersion: 9 },
+    },
+    {
+      code: 'const { foo: { bar } } = {}',
+      options: [{ object: { max: 1 } }],
+      parserOptions: { ecmaVersion: 9 },
+    },
   ],
 
   invalid: [
@@ -52,6 +62,43 @@ ruleTester.run('prefer-destructuring', rule, {
           type: 'VariableDeclarator',
         },
       ],
+    },
+    {
+      code: 'const { foo: { bar } = {}, baz } = {}',
+      output: null,
+      errors: [
+          {
+              messageId: 'tooDeeply',
+              data: { depth: 1, maxDepth: 0 },
+              type: 'VariableDeclarator',
+          },
+      ],
+      parserOptions: { ecmaVersion: 9 },
+    },
+    {
+      code: 'const { first, second: { third } = {} } = {}',
+      output: null,
+      errors: [
+          {
+              messageId: 'tooDeeply',
+              data: { depth: 1, maxDepth: 0 },
+              type: 'VariableDeclarator',
+          },
+      ],
+      parserOptions: { ecmaVersion: 9 },
+    },
+    {
+      code: 'const { one, first: { second: { third } } = {} } = {}',
+      output: null,
+      options: [{ object: { max: 1 } }],
+      errors: [
+          {
+              messageId: 'tooDeeply',
+              data: { depth: 2, maxDepth: 1 },
+              type: 'VariableDeclarator',
+          },
+      ],
+      parserOptions: { ecmaVersion: 9 },
     },
   ],
 });
