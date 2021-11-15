@@ -67,11 +67,11 @@ ruleTester.run('prefer-destructuring', rule, {
       code: 'const { foo: { bar } = {}, baz } = {}',
       output: null,
       errors: [
-          {
-              messageId: 'tooDeeply',
-              data: { depth: 1, maxDepth: 0 },
-              type: 'VariableDeclarator',
-          },
+        {
+          messageId: 'tooDeeply',
+          data: { depth: 1, maxDepth: 0 },
+          type: 'VariableDeclarator',
+        },
       ],
       parserOptions: { ecmaVersion: 9 },
     },
@@ -79,11 +79,11 @@ ruleTester.run('prefer-destructuring', rule, {
       code: 'const { first, second: { third } = {} } = {}',
       output: null,
       errors: [
-          {
-              messageId: 'tooDeeply',
-              data: { depth: 1, maxDepth: 0 },
-              type: 'VariableDeclarator',
-          },
+        {
+          messageId: 'tooDeeply',
+          data: { depth: 1, maxDepth: 0 },
+          type: 'VariableDeclarator',
+        },
       ],
       parserOptions: { ecmaVersion: 9 },
     },
@@ -92,11 +92,11 @@ ruleTester.run('prefer-destructuring', rule, {
       output: null,
       options: [{ object: { max: 1 } }],
       errors: [
-          {
-              messageId: 'tooDeeply',
-              data: { depth: 2, maxDepth: 1 },
-              type: 'VariableDeclarator',
-          },
+        {
+          messageId: 'tooDeeply',
+          data: { depth: 2, maxDepth: 1 },
+          type: 'VariableDeclarator',
+        },
       ],
       parserOptions: { ecmaVersion: 9 },
     },
